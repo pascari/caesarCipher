@@ -1,5 +1,6 @@
 .idea/
 *.xml
+*.txt
 
 # Compiled class file
 *.class
