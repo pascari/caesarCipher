@@ -1,6 +1,5 @@
 package cryptanalizer;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,10 +17,10 @@ public class BrutForce {
         String[] wordsFromPatternMessage = patternMessageSting.split(" ");
 
         for (int k = 1; k <= Alphabet.ALPHABET.length; k++) {
-            File file = new File(codedMessagePath);
+            Path filePath = Path.of(codedMessagePath);
             StringBuilder encryptedMessageSb = new StringBuilder();
             StringBuilder decryptedMessageSb = new StringBuilder();
-            try (Scanner scanner = new Scanner(file)) {
+            try (Scanner scanner = new Scanner(filePath)) {
                 while (scanner.hasNextLine()) {
                     encryptedMessageSb.append(scanner.nextLine());
                 }

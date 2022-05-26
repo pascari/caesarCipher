@@ -1,17 +1,17 @@
 package cryptanalizer;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Encryption {
     public static void encryption(String messagePath, int key) throws IOException {
-        File file = new File(messagePath);
+        Path filePath = Path.of(messagePath);
         StringBuilder messageSb = new StringBuilder();
         StringBuilder encryptedMessageSb = new StringBuilder();
-        try (Scanner scanner = new Scanner(file)) {
+        try (Scanner scanner = new Scanner(filePath)) {
             while (scanner.hasNextLine()) {
                 messageSb.append(scanner.nextLine());
             }
@@ -31,7 +31,7 @@ public class Encryption {
         }
         System.out.println("Текст из файла message был зашифрован и сохранён в созданный файл codedMessage");
         String codedMessage = encryptedMessageSb.toString();
-        try (FileOutputStream fileOutputStream = new FileOutputStream("/Users/serg/Desktop/codedMessage")) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\sergi\\Desktop\\codedMessage.txt")) {
             fileOutputStream.write(codedMessage.getBytes());
         }
     }

@@ -1,17 +1,17 @@
 package cryptanalizer;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Decryption {
     public static void decryption(String codedMessagePath, int key) throws IOException {
-        File file = new File(codedMessagePath);
+        Path filePath = Path.of(codedMessagePath);
         StringBuilder encryptedMessageSb = new StringBuilder();
         StringBuilder decryptedMessageSb = new StringBuilder();
-        try (Scanner scanner = new Scanner(file)) {
+        try (Scanner scanner = new Scanner(filePath)) {
             while (scanner.hasNextLine()) {
                 encryptedMessageSb.append(scanner.nextLine());
             }
@@ -33,7 +33,7 @@ public class Decryption {
         }
         System.out.println("Текст из файла codedMessage был расшифрован и сохранён в созданный файл decodedMessage");
         String decodedMessage = decryptedMessageSb.toString();
-        try (FileOutputStream fileOutputStream = new FileOutputStream("/Users/serg/Desktop/decodedMessage")) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\sergi\\Desktop\\decodedMessage.txt")) {
             fileOutputStream.write(decodedMessage.getBytes());
         }
     }
