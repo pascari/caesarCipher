@@ -1,0 +1,10 @@
+iOS myPathMessage:     		 /Users/serg/Desktop/message
+Windows myPathMessage: 		 C:\Users\sergi\Desktop\message.txt
+
+
+iOS myPathCodedMessage:     	/Users/serg/Desktop/codedMessage.txt
+Windows myPathCodedMessage:     C:\Users\sergi\Desktop\codedMessage.txt
+
+
+iOS myPathPatternMessage: 	/Users/serg/Desktop/pattern.txt
+Windows myPathPatternMessage: 	C:\Users\sergi\Desktop\pattern.txt
